@@ -1,11 +1,19 @@
-import React from 'react';
-import './style.css';
+import React, { Component } from 'react';
+import Todos from './Todos';
 
-export default function App() {
-  return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
-  );
+export default class App extends Component {
+  state = {
+    todos: [
+      {id: 1, content: 'buy some milk'},
+      {id: 2, content: 'play mario kart'}
+    ]
+  }
+  render(){
+    return (
+      <div className="App container">
+        <h1 class="center blue-text">Todos</h1>
+         <Todos todos={this.state.todos} />   
+      </div>
+    );
+  }
 }
